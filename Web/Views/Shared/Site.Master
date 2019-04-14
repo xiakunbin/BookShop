@@ -13,7 +13,7 @@
     
 <body>
     <div id="top">
-        <div class="status">您好，欢迎来到第三波书店^_^   <span><a href="#">【登录】</a><a href="#">【免费注册】</a></span> </div>
+        <div class="status">您好，欢迎来到第三波书店^_^   <span><a href="<%=Url.Content("~/Account/Index") %>">【登录】</a><a href="#">【免费注册】</a></span> </div>
         <div class="member">
             <ul>
                 <li><a href="#">
