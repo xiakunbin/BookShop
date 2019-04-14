@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
-
+<%@ Import Namespace="BookShop.Models" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,7 +13,18 @@
     
 <body>
     <div id="top">
-        <div class="status">您好，欢迎来到第三波书店^_^   <span><a href="<%=Url.Content("~/Account/Index") %>">【登录】</a><a href="#">【免费注册】</a></span> </div>
+        <div class="status">
+            <%  User user = Session["CurrentUser"] as User;
+                if (user == null)
+                {   %>
+                    <a href="<%=Url.Content("~/Account/Index") %>">【登录】</a>
+                    <a href="#">【免费注册】</a>
+           <%   }
+                else
+                {   %>
+                    您好，<%=user.LoginId %>
+           <%   } %>
+        </div>
         <div class="member">
             <ul>
                 <li><a href="#">
