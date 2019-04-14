@@ -77,6 +77,13 @@ namespace Web.Controllers
 
         }
 
+        public void LogOut()
+        {
+            Session["CurrentUser"] = null;
+            //返回首页
+            Response.Redirect("~/");
+        }
+
         #region "数据访问"
         /// <summary>
         /// 登录验证
